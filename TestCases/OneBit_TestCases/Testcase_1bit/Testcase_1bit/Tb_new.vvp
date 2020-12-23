@@ -1,0 +1,174 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x56259d660020 .scope module, "testbench_before" "testbench_before" 2 3;
+ .timescale 0 0;
+P_0x56259d513500 .param/l "PERIOD" 0 2 18, +C4<00000000000000000000000000001010>;
+v0x56259d4ab7e0_0 .var "D_in", 0 0;
+v0x56259d4ab8a0_0 .net "D_out", 0 0, L_0x56259d7fd3d0;  1 drivers
+v0x56259d4ab960_0 .var "clk", 0 0;
+v0x56259d4aba00_0 .var "en", 0 0;
+E_0x56259d6649d0 .event posedge, v0x56259d722110_0;
+S_0x56259d6601f0 .scope module, "x" "test_1bit_before" 2 15, 3 3 0, S_0x56259d660020;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "d_in"
+    .port_info 1 /INPUT 1 "clk"
+    .port_info 2 /INPUT 1 "en"
+    .port_info 3 /OUTPUT 1 "d_out"
+v0x56259d4a7e10_0 .net "_0_", 0 0, L_0x56259d7f7fe0;  1 drivers
+v0x56259d4a7eb0_0 .net "clk", 0 0, v0x56259d4ab960_0;  1 drivers
+v0x56259d4a7f70_0 .net "d_in", 0 0, v0x56259d4ab7e0_0;  1 drivers
+v0x56259d4a8060_0 .net "d_out", 0 0, L_0x56259d7fd3d0;  alias, 1 drivers
+v0x56259d4a8190_0 .net "en", 0 0, v0x56259d4aba00_0;  1 drivers
+S_0x56259d665c20 .scope module, "_1_" "sky130_fd_sc_hd__mux2_1" 3 9, 4 86280 1, S_0x56259d6601f0;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "X"
+    .port_info 1 /INPUT 1 "A0"
+    .port_info 2 /INPUT 1 "A1"
+    .port_info 3 /INPUT 1 "S"
+v0x56259d723fe0_0 .net "A0", 0 0, L_0x56259d7fd3d0;  alias, 1 drivers
+v0x56259d7240a0_0 .net "A1", 0 0, v0x56259d4ab7e0_0;  alias, 1 drivers
+v0x56259d720440_0 .net "S", 0 0, v0x56259d4aba00_0;  alias, 1 drivers
+L_0x56259d7224c0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+v0x56259d720540_0 .net8 "VGND", 0 0, L_0x56259d7224c0;  1 drivers, strength-aware
+L_0x56259d4abaa0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+v0x56259d7205e0_0 .net8 "VNB", 0 0, L_0x56259d4abaa0;  1 drivers, strength-aware
+L_0x56259d4abb10 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+v0x56259d720680_0 .net8 "VPB", 0 0, L_0x56259d4abb10;  1 drivers, strength-aware
+L_0x56259d845500 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+v0x56259d720720_0 .net8 "VPWR", 0 0, L_0x56259d845500;  1 drivers, strength-aware
+v0x56259d7207c0_0 .net "X", 0 0, L_0x56259d7f7fe0;  alias, 1 drivers
+S_0x56259d665e10 .scope module, "base" "sky130_fd_sc_hd__mux2" 4 86298, 4 86164 1, S_0x56259d665c20;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "X"
+    .port_info 1 /INPUT 1 "A0"
+    .port_info 2 /INPUT 1 "A1"
+    .port_info 3 /INPUT 1 "S"
+UDP_sky130_fd_sc_hd__udp_mux_2to1 .udp/comb "sky130_fd_sc_hd__udp_mux_2to1", 3
+ ,"00?0"
+ ,"11?1"
+ ,"0?00"
+ ,"1?01"
+ ,"?010"
+ ,"?111";
+L_0x56259d7f9b00 .udp UDP_sky130_fd_sc_hd__udp_mux_2to1, L_0x56259d7fd3d0, v0x56259d4ab7e0_0, v0x56259d4aba00_0;
+L_0x56259d7f7fe0 .functor BUF 1, L_0x56259d7f9b00, C4<0>, C4<0>, C4<0>;
+v0x56259d462900_0 .net "A0", 0 0, L_0x56259d7fd3d0;  alias, 1 drivers
+v0x56259d462cb0_0 .net "A1", 0 0, v0x56259d4ab7e0_0;  alias, 1 drivers
+v0x56259d661cb0_0 .net "S", 0 0, v0x56259d4aba00_0;  alias, 1 drivers
+L_0x56259d8455c0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+v0x56259d661d50_0 .net8 "VGND", 0 0, L_0x56259d8455c0;  1 drivers, strength-aware
+L_0x56259d8441a0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+v0x56259d661e10_0 .net8 "VNB", 0 0, L_0x56259d8441a0;  1 drivers, strength-aware
+L_0x56259d662050 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+v0x56259d661ed0_0 .net8 "VPB", 0 0, L_0x56259d662050;  1 drivers, strength-aware
+L_0x56259d4abb80 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+v0x56259d661f90_0 .net8 "VPWR", 0 0, L_0x56259d4abb80;  1 drivers, strength-aware
+v0x56259d723de0_0 .net "X", 0 0, L_0x56259d7f7fe0;  alias, 1 drivers
+v0x56259d723ea0_0 .net "mux_2to10_out_X", 0 0, L_0x56259d7f9b00;  1 drivers
+S_0x56259d71cab0 .scope module, "_2_" "sky130_fd_sc_hd__dfxtp_1" 3 15, 4 31626 1, S_0x56259d6601f0;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "Q"
+    .port_info 1 /INPUT 1 "CLK"
+    .port_info 2 /INPUT 1 "D"
+v0x56259d4a9a70_0 .net "CLK", 0 0, v0x56259d4ab960_0;  alias, 1 drivers
+v0x56259d4a9b10_0 .net "D", 0 0, L_0x56259d7f7fe0;  alias, 1 drivers
+v0x56259d4ad140_0 .net "Q", 0 0, L_0x56259d7fd3d0;  alias, 1 drivers
+L_0x56259d7fb3a0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+v0x56259d4ad1e0_0 .net8 "VGND", 0 0, L_0x56259d7fb3a0;  1 drivers, strength-aware
+L_0x56259d7fb440 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+v0x56259d4ad280_0 .net8 "VNB", 0 0, L_0x56259d7fb440;  1 drivers, strength-aware
+L_0x56259d7fb4e0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+v0x56259d4ad370_0 .net8 "VPB", 0 0, L_0x56259d7fb4e0;  1 drivers, strength-aware
+L_0x56259d7fb580 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+v0x56259d4ad410_0 .net8 "VPWR", 0 0, L_0x56259d7fb580;  1 drivers, strength-aware
+S_0x56259d71ccd0 .scope module, "base" "sky130_fd_sc_hd__dfxtp" 4 31642, 4 31928 1, S_0x56259d71cab0;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "Q"
+    .port_info 1 /INPUT 1 "CLK"
+    .port_info 2 /INPUT 1 "D"
+UDP_sky130_fd_sc_hd__udp_dff$P_pp$PG$N .udp/sequ "sky130_fd_sc_hd__udp_dff$P_pp$PG$N", 5, 2
+ ,"?1r?101"
+ ,"?0r?100"
+ ,"11R?101"
+ ,"00R?100"
+ ,"11Q?101"
+ ,"00Q?100"
+ ,"00x?100"
+ ,"11x?101"
+ ,"??_?10-"
+ ,"?*b?10-"
+ ,"?????*x";
+o0x7f26f3717468 .functor BUFZ 1, C4<z>; HiZ drive
+o0x7f26f3717438 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x56259d7f9a30 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x56259d7fb650 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x56259d7f8050 .udp UDP_sky130_fd_sc_hd__udp_dff$P_pp$PG$N, o0x7f26f3717468, o0x7f26f3717438, v0x56259d4a9930_0, L_0x56259d7f9a30, L_0x56259d7fb650;
+L_0x56259d7fd3d0 .functor BUF 1, L_0x56259d7f8050, C4<0>, C4<0>, C4<0>;
+v0x56259d722110_0 .net "CLK", 0 0, v0x56259d4ab960_0;  alias, 1 drivers
+v0x56259d7221d0_0 .net "CLK_delayed", 0 0, o0x7f26f3717438;  0 drivers
+v0x56259d722290_0 .net "D", 0 0, L_0x56259d7f7fe0;  alias, 1 drivers
+v0x56259d722380_0 .net "D_delayed", 0 0, o0x7f26f3717468;  0 drivers
+v0x56259d722420_0 .net "Q", 0 0, L_0x56259d7fd3d0;  alias, 1 drivers
+v0x56259d71e770_0 .net8 "VGND", 0 0, L_0x56259d7fb650;  1 drivers, strength-aware
+L_0x56259d7fb6f0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+v0x56259d71e830_0 .net8 "VNB", 0 0, L_0x56259d7fb6f0;  1 drivers, strength-aware
+L_0x56259d7f99c0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+v0x56259d71e8f0_0 .net8 "VPB", 0 0, L_0x56259d7f99c0;  1 drivers, strength-aware
+v0x56259d71e9b0_0 .net8 "VPWR", 0 0, L_0x56259d7f9a30;  1 drivers, strength-aware
+L_0x7f26f36ce018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x56259d71ea70_0 .net/2u *"_s4", 0 0, L_0x7f26f36ce018;  1 drivers
+v0x56259d4a97b0_0 .net "awake", 0 0, L_0x56259d7f8330;  1 drivers
+v0x56259d4a9870_0 .net "buf_Q", 0 0, L_0x56259d7f8050;  1 drivers
+v0x56259d4a9930_0 .var "notifier", 0 0;
+L_0x56259d7f8330 .cmp/eeq 1, L_0x56259d7f9a30, L_0x7f26f36ce018;
+    .scope S_0x56259d660020;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "testbench_before.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x56259d660020;
+T_1 ;
+    %delay 658067456, 1164;
+    %load/vec4 v0x56259d4ab960_0;
+    %nor/r;
+    %store/vec4 v0x56259d4ab960_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x56259d660020;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56259d4ab960_0, 0, 1;
+    %delay 1316134912, 2328;
+    %wait E_0x56259d6649d0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56259d4ab7e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x56259d4aba00_0, 0, 1;
+    %delay 1316134912, 2328;
+    %wait E_0x56259d6649d0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x56259d4ab7e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56259d4aba00_0, 0, 1;
+    %delay 1316134912, 2328;
+    %wait E_0x56259d6649d0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x56259d4ab7e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x56259d4aba00_0, 0, 1;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "testbench_before.v";
+    "test_1bit_before.gl.v";
+    "sky130_fd_sc_hd.v";
