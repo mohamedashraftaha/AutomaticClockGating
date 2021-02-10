@@ -1,1 +1,1 @@
-# AutomaticClockGating
+# AutomaticClockGating.
